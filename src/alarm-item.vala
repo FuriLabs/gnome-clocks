@@ -195,7 +195,7 @@ private class Item : Object, ContentItem {
     }
 
     private void setup_bell () {
-        bell = new Utils.Bell (sound_file);
+        bell = new Utils.Bell ("alarm-clock-elapsed");
         notification = new GLib.Notification (_("Alarm"));
         notification.set_body (name);
         notification.set_priority (HIGH);
