@@ -3,6 +3,7 @@ clocks_c_sources = files('cutils.c', 'twilight.c')
 clocks_c_args = [
   '-DGWEATHER_I_KNOW_THIS_IS_UNSTABLE',
   '-DGNOME_DESKTOP_USE_UNSTABLE_API',
+  '-DLIBFEEDBACK_USE_UNSTABLE_API',
   '-DGETTEXT_PACKAGE="@0@"'.format(meson.project_name()),
 ]
 
@@ -84,6 +85,7 @@ clocks_dependencies = [
   gweather,
   gnomedesktop,
   geocodeglib,
+  libfeedback,
   libgeoclue,
   libadwaita,
   clocks_c_dep,
