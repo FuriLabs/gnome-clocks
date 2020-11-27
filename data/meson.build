@@ -50,6 +50,15 @@ if desktop_file_validate.found()
 endif
 
 
+desktop_daemon_file = i18n.merge_file(
+  input : 'org.gnome.clocks-daemon.desktop.in',
+  output : '@0@-daemon.desktop'.format(app_id),
+  type : 'desktop',
+  po_dir : '../po',
+  install : true,
+  install_dir : join_paths(get_option('sysconfdir'), 'xdg/autostart')
+)
+
 dbusconf = configuration_data()
 dbusconf.set('bindir', get_option('prefix') / get_option('bindir'))
 dbusconf.set('name', app_id)
@@ -117,4 +126,3 @@ if glib_compile_schemas.found()
     ]
   )
 endif
-
