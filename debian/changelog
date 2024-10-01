@@ -1,8 +1,12 @@
-gnome-clocks (46.0-2) UNRELEASED; urgency=medium
+gnome-clocks (47.0-1) UNRELEASED; urgency=medium
 
+  [ Amin Bandali ]
   * debian/control: Update Homepage to the new page on apps.gnome.org
 
- -- Amin Bandali <bandali@ubuntu.com>  Tue, 19 Mar 2024 12:58:27 -0400
+  [ Nathan Pratta Teodosio ]
+  * New upstream release
+
+ -- Nathan Pratta Teodosio <nathan.teodosio@canonical.com>  Tue, 01 Oct 2024 09:21:54 +0200
 
 gnome-clocks (46.0-1) unstable; urgency=medium
 
