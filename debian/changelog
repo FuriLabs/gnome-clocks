@@ -1,4 +1,4 @@
-gnome-clocks (47.0-1) UNRELEASED; urgency=medium
+gnome-clocks (47.0-1) unstable; urgency=medium
 
   [ Amin Bandali ]
   * debian/control: Update Homepage to the new page on apps.gnome.org
