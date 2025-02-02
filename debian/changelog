@@ -1,3 +1,9 @@
+gnome-clocks (48~beta-1) UNRELEASED; urgency=medium
+
+  * New upstream release
+
+ -- Jeremy Bícha <jbicha@ubuntu.com>  Sun, 02 Feb 2025 16:58:11 -0500
+
 gnome-clocks (47.0-1) unstable; urgency=medium
 
   [ Amin Bandali ]
