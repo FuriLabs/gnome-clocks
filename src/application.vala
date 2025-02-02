@@ -58,7 +58,7 @@ public class Application : Adw.Application {
         search_provider.activate.connect ((timestamp) => {
             var win = ensure_window ();
             win.show_world ();
-            win.present_with_time (timestamp);
+            win.present ();
         });
 
         system_notifications = new List<string> ();
@@ -108,6 +108,7 @@ public class Application : Adw.Application {
 
         set_accels_for_action ("win.new", { "<Control>n" });
         set_accels_for_action ("win.help", { "F1" });
+        set_accels_for_action ("window.close", { "<Control>w" });
         set_accels_for_action ("app.quit", { "<Control>q" });
         set_accels_for_action ("win.navigate-backward", { "<Control><Alt>Page_Up" });
         set_accels_for_action ("win.navigate-forward", { "<Control><Alt>Page_Down" });
@@ -167,7 +168,7 @@ public class Application : Adw.Application {
 
     void on_quit_activate () {
         if (window != null) {
-            ((Window) window).destroy ();
+            ((Window) window).close ();
         }
         quit ();
     }
