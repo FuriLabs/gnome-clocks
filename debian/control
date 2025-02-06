@@ -2,12 +2,16 @@ Source: gnome-clocks
 Section: gnome
 Priority: optional
 Maintainer: Debian GNOME Maintainers <pkg-gnome-maintainers@lists.alioth.debian.org>
-Uploaders: Iain Lane <laney@debian.org>, Jeremy Bícha <jbicha@ubuntu.com>, Laurent Bigonville <bigon@debian.org>, Marco Trevisan (Treviño) <marco@ubuntu.com>, Michael Biebl <biebl@debian.org>, Tim Lunn <tim@feathertop.org>
-Build-Depends: appstream,
-               appstream-util <!nocheck>,
-               debhelper-compat (= 13),
-               desktop-file-utils <!nocheck>,
+Uploaders: Iain Lane <laney@debian.org>,
+           Jeremy Bícha <jbicha@ubuntu.com>,
+           Laurent Bigonville <bigon@debian.org>,
+           Marco Trevisan (Treviño) <marco@ubuntu.com>,
+           Tim Lunn <tim@feathertop.org>
+Build-Depends: debhelper-compat (= 13),
                dh-sequence-gnome,
+               appstream,
+               appstream-util <!nocheck>,
+               desktop-file-utils <!nocheck>,
                itstool,
                libadwaita-1-dev (>= 1.6~alpha),
                libgeoclue-2-dev (>= 2.4),
@@ -19,7 +23,7 @@ Build-Depends: appstream,
                libgweather-4-dev (>= 4.1),
                libxml2-utils,
                meson (>= 0.59.0),
-               pkg-config,
+               pkgconf,
                valac (>= 0.56.4)
 Standards-Version: 4.6.2
 Rules-Requires-Root: no
@@ -29,9 +33,7 @@ Homepage: https://apps.gnome.org/Clocks/
 
 Package: gnome-clocks
 Architecture: any
-Depends: geoclue-2.0,
-         ${misc:Depends},
-         ${shlibs:Depends}
+Depends: geoclue-2.0, ${misc:Depends}, ${shlibs:Depends}
 Description: Simple GNOME app with stopwatch, timer, and world clock support
  GNOME Clocks is a simple application to show the time and date in multiple
  locations and set alarms or timers. A stopwatch is also included.
