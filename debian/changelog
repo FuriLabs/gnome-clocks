@@ -1,8 +1,11 @@
-gnome-clocks (48~beta-1) UNRELEASED; urgency=medium
+gnome-clocks (48~beta-1) unstable; urgency=medium
 
   * New upstream release
+  * Bump minimum GTK & libadwaita
+  * Run wrap-and-sort
+  * Bump Standards Version to 4.7.0
 
- -- Jeremy Bícha <jbicha@ubuntu.com>  Sun, 02 Feb 2025 16:58:11 -0500
+ -- Jeremy Bícha <jbicha@ubuntu.com>  Thu, 06 Feb 2025 07:54:29 -0500
 
 gnome-clocks (47.0-1) unstable; urgency=medium
 
