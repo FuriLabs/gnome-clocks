@@ -24,7 +24,8 @@ Build-Depends: debhelper-compat (= 13),
                libxml2-utils,
                meson (>= 0.59.0),
                pkgconf,
-               valac (>= 0.56.4)
+               valac (>= 0.56.4),
+               libfeedback-dev,
 Standards-Version: 4.7.0
 Rules-Requires-Root: no
 Vcs-Browser: https://salsa.debian.org/gnome-team/gnome-clocks
