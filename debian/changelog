@@ -1,3 +1,11 @@
+gnome-clocks (48.0-3) UNRELEASED; urgency=medium
+
+  * d/control: Remove unnecessary B-D on libgirepository1.0-dev
+  * d/control: Remove Rules-Requires-Root, no longer needed since trixie
+  * d/control: Standards-Version: 4.7.2 (no changes required)
+
+ -- Simon McVittie <smcv@debian.org>  Tue, 02 Sep 2025 00:06:00 +0100
+
 gnome-clocks (48.0-2) unstable; urgency=medium
 
   * Team upload
