@@ -1,8 +1,8 @@
-gnome-clocks (49.0-1) UNRELEASED; urgency=medium
+gnome-clocks (49.0-1) unstable; urgency=medium
 
   * New upstream release
 
- -- Jeremy Bícha <jbicha@ubuntu.com>  Sun, 14 Sep 2025 23:01:51 -0400
+ -- Jeremy Bícha <jbicha@ubuntu.com>  Sun, 14 Sep 2025 23:23:23 -0400
 
 gnome-clocks (48.0-3) unstable; urgency=medium
 
