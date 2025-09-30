@@ -1,3 +1,10 @@
+gnome-clocks (49.0-2) unstable; urgency=medium
+
+  * Remove !nocheck annotation from Build-Depends: desktop-file-utils
+    (Closes: #1116745)
+
+ -- Jeremy Bícha <jbicha@ubuntu.com>  Tue, 30 Sep 2025 11:00:59 -0400
+
 gnome-clocks (49.0-1) unstable; urgency=medium
 
   * New upstream release
