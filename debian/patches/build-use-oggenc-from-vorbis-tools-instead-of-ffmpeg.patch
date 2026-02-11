@@ -1,0 +1,75 @@
+From: =?utf-8?q?Jeremy_B=C3=ADcha?= <jbicha@ubuntu.com>
+Date: Thu, 12 Feb 2026 09:24:37 -0500
+Subject: build: use oggenc from vorbis-tools instead of ffmpeg
+
+to make output reproducible
+
+Ogg is designed to use unique serial numbers even
+if the input is identical.
+
+oggenc allows us to override that and use our own serial
+number. I used 0 because it's good enough for our purposes.
+
+https://wiki.debian.org/ReproducibleBuilds/OggSerialNumbers
+
+This reproducibility regression was detected by
+https://reproduce.debian.net/
+
+and the Salsa CI pipeline which runs a reproducibility check
+by default
+https://salsa.debian.org/salsa-ci-team/pipeline/
+
+Closes: #436
+
+Forwarded: https://gitlab.gnome.org/GNOME/gnome-clocks/-/merge_requests/414
+---
+ data/meson.build               |  3 ---
+ data/sounds/alarms/meson.build | 10 ++++++++--
+ 2 files changed, 8 insertions(+), 5 deletions(-)
+
+diff --git a/data/meson.build b/data/meson.build
+index 53e5de2..69f137b 100644
+--- a/data/meson.build
++++ b/data/meson.build
+@@ -13,9 +13,6 @@ install_data(
+   rename: '@0@-symbolic.svg'.format(app_id)
+ )
+ 
+-ffmpeg = find_program('ffmpeg')
+-to_vorbis = [ffmpeg, '-i', '@INPUT@', '-c:a', 'libvorbis', '@OUTPUT@' ]
+-
+ subdir('sounds')
+ 
+ resource_files = files('gnome-clocks.gresource.xml')
+diff --git a/data/sounds/alarms/meson.build b/data/sounds/alarms/meson.build
+index 2a9fb2d..1a344d3 100644
+--- a/data/sounds/alarms/meson.build
++++ b/data/sounds/alarms/meson.build
+@@ -1,3 +1,5 @@
++oggenc = find_program('oggenc')
++
+ alarms_resources = [
+   'beep-beep.flac',
+ ]
+@@ -7,7 +9,9 @@ foreach alarm: alarms_resources
+     fs.replace_suffix(alarm, '.oga'),
+     output: '@BASENAME@.oga',
+     input: alarm,
+-    command: to_vorbis,
++    # The default ogg serial numbers are unreproducible
++    # Set the serial number to 0
++    command: [oggenc, '@INPUT@', '--serial', '0', '-o', '@OUTPUT@' ],
+   )
+ endforeach
+ 
+@@ -40,7 +44,9 @@ foreach alarm: alarms_data
+     fs.replace_suffix(alarm, '.oga'),
+     output: '@BASENAME@.oga',
+     input: alarm,
+-    command: to_vorbis,
++    # The default ogg serial numbers are unreproducible
++    # Set the serial number to 0
++    command: [oggenc, '@INPUT@', '--serial', '0', '-o', '@OUTPUT@' ],
+     install: true,
+     install_dir: get_option('datadir') / 'sounds' / 'gnome' / 'default' / 'alarms',
+   )
