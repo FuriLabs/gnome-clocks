@@ -1,6 +1,25 @@
-vapi_sources = files(
-  'config.vapi',
+clocks_c_sources = files('cutils.c', 'twilight.c')
+
+clocks_c_args = [
+  '-DGWEATHER_I_KNOW_THIS_IS_UNSTABLE',
+  '-DGNOME_DESKTOP_USE_UNSTABLE_API',
+  '-DGETTEXT_PACKAGE="@0@"'.format(meson.project_name()),
+]
+
+clocks_c = static_library(
+  'clocks-c',
+  clocks_c_sources + config_h,
+  c_args: clocks_c_args,
+  include_directories: config_h_dir,
+  dependencies: [ icu_i18n, icu_uc, gtk, math ],
+  gnu_symbol_visibility: 'hidden',
 )
+
+clocks_c_dep = declare_dependency(
+  link_with: clocks_c,
+)
+
+vapi_sources = files('config.vapi')
 
 clocks_vala_sources = files(
   'alarm-day-picker-row.vala',
@@ -9,12 +28,16 @@ clocks_vala_sources = files(
   'alarm-ringing-panel.vala',
   'alarm-row.vala',
   'alarm-setup-dialog.vala',
+  'alarm-sound-model.vala',
   'application.vala',
   'clock.vala',
   'geocoding.vala',
   'header-bar.vala',
   'main.vala',
   'search-provider.vala',
+  'sound.vala',
+  'sound-chooser.vala',
+  'sound-chooser-row.vala',
   'stopwatch-face.vala',
   'stopwatch-lap.vala',
   'stopwatch-laps-row.vala',
@@ -35,11 +58,6 @@ clocks_vala_sources = files(
   'world-standalone.vala',
 )
 
-clocks_c_sources = files(
-  'cutils.c',
-  'twilight.c',
-)
-
 clocks_sources = [
   vapi_sources,
   clocks_vala_sources,
@@ -54,10 +72,8 @@ clocks_vala_args = [
   # '--enable-experimental-non-null',
 ]
 
-clocks_c_args = [
-  '-include', 'config.h',
-  '-DGWEATHER_I_KNOW_THIS_IS_UNSTABLE',
-  '-DGNOME_DESKTOP_USE_UNSTABLE_API',
+clocks_vala_c_args = [
+  '-w', # Disable useless C warnings so we can read the Vala ones.
 ]
 
 clocks_dependencies = [
@@ -70,15 +86,17 @@ clocks_dependencies = [
   geocodeglib,
   libgeoclue,
   libadwaita,
-  math
+  clocks_c_dep,
 ]
 
-executable('gnome-clocks', clocks_sources,
+executable(
+  'gnome-clocks',
+  clocks_sources,
   include_directories: config_h_dir,
   vala_args: clocks_vala_args,
-  c_args: clocks_c_args,
+  c_args: clocks_c_args + clocks_vala_c_args,
   dependencies: clocks_dependencies,
-  install: true
+  install: true,
 )
 
 if get_option('docs')
