@@ -1,5 +1,5 @@
 Source: gnome-clocks
-Standards-Version: 4.7.2
+Standards-Version: 4.7.3
 Maintainer: Debian GNOME Maintainers <pkg-gnome-maintainers@lists.alioth.debian.org>
 Uploaders: Iain Lane <laney@debian.org>,
            Jeremy Bícha <jbicha@ubuntu.com>,
@@ -7,7 +7,6 @@ Uploaders: Iain Lane <laney@debian.org>,
            Marco Trevisan (Treviño) <marco@ubuntu.com>,
            Tim Lunn <tim@feathertop.org>
 Section: gnome
-Priority: optional
 Build-Depends: debhelper-compat (= 13),
                dh-sequence-gnome,
                appstream <!nocheck>,
