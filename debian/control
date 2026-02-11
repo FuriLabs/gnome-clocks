@@ -1,12 +1,13 @@
 Source: gnome-clocks
-Section: gnome
-Priority: optional
+Standards-Version: 4.7.2
 Maintainer: Debian GNOME Maintainers <pkg-gnome-maintainers@lists.alioth.debian.org>
 Uploaders: Iain Lane <laney@debian.org>,
            Jeremy Bícha <jbicha@ubuntu.com>,
            Laurent Bigonville <bigon@debian.org>,
            Marco Trevisan (Treviño) <marco@ubuntu.com>,
            Tim Lunn <tim@feathertop.org>
+Section: gnome
+Priority: optional
 Build-Depends: debhelper-compat (= 13),
                dh-sequence-gnome,
                appstream <!nocheck>,
@@ -14,18 +15,17 @@ Build-Depends: debhelper-compat (= 13),
                ffmpeg,
                itstool,
                libadwaita-1-dev (>= 1.8),
-               libgeoclue-2-dev (>= 2.4),
-               libgeocode-glib-dev (>= 3.26.3),
-               libglib2.0-dev (>= 2.72),
+               libgeoclue-2-dev,
+               libgeocode-glib-dev,
+               libglib2.0-dev,
                libgnome-desktop-4-dev (>= 44~beta),
                libgtk-4-dev (>= 4.15.3),
-               libgweather-4-dev (>= 4.1),
+               libgweather-4-dev,
                libicu-dev,
                libxml2-utils,
-               meson (>= 0.60),
+               meson,
                pkgconf,
                valac (>= 0.56.4)
-Standards-Version: 4.7.2
 Vcs-Browser: https://salsa.debian.org/gnome-team/gnome-clocks
 Vcs-Git: https://salsa.debian.org/gnome-team/gnome-clocks.git
 Homepage: https://apps.gnome.org/Clocks/

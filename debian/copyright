@@ -1,6 +1,6 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: gnome-clocks
 Source: https://download.gnome.org/sources/gnome-clocks/
+Upstream-Name: gnome-clocks
 
 Files: *
 Copyright: 2011-2013 Collabora Ltd.
