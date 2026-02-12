@@ -11,7 +11,6 @@ Build-Depends: debhelper-compat (= 13),
                dh-sequence-gnome,
                appstream <!nocheck>,
                desktop-file-utils,
-               ffmpeg,
                itstool,
                libadwaita-1-dev (>= 1.8),
                libgeoclue-2-dev,
@@ -24,7 +23,8 @@ Build-Depends: debhelper-compat (= 13),
                libxml2-utils,
                meson,
                pkgconf,
-               valac (>= 0.56.4)
+               valac (>= 0.56.4),
+               vorbis-tools
 Vcs-Browser: https://salsa.debian.org/gnome-team/gnome-clocks
 Vcs-Git: https://salsa.debian.org/gnome-team/gnome-clocks.git
 Homepage: https://apps.gnome.org/Clocks/
