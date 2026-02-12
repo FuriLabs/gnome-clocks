@@ -1,11 +1,9 @@
 Source: gnome-clocks
 Standards-Version: 4.7.3
 Maintainer: Debian GNOME Maintainers <pkg-gnome-maintainers@lists.alioth.debian.org>
-Uploaders: Iain Lane <laney@debian.org>,
-           Jeremy Bícha <jbicha@ubuntu.com>,
+Uploaders: Jeremy Bícha <jbicha@ubuntu.com>,
            Laurent Bigonville <bigon@debian.org>,
-           Marco Trevisan (Treviño) <marco@ubuntu.com>,
-           Tim Lunn <tim@feathertop.org>
+           Marco Trevisan (Treviño) <marco@ubuntu.com>
 Section: gnome
 Build-Depends: debhelper-compat (= 13),
                dh-sequence-gnome,
