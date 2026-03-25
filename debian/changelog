@@ -1,10 +1,10 @@
-gnome-clocks (50.0-1) UNRELEASED; urgency=medium
+gnome-clocks (50.0-1) unstable; urgency=medium
 
   * New upstream release 50.0
   * Drop upstreamed patch:
     - build-use-oggenc-from-vorbis-tools-instead-of-ffmpeg.patch
 
- -- Daniel van Vugt <daniel.van.vugt@canonical.com>  Wed, 25 Mar 2026 15:57:38 +0800
+ -- Daniel van Vugt <daniel.van.vugt@canonical.com>  Wed, 25 Mar 2026 10:16:03 +0100
 
 gnome-clocks (50~beta-2) unstable; urgency=medium
 
