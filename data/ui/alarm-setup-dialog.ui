@@ -133,6 +133,7 @@
                                 <property name="accessible-role">combo-box</property>
                                 <property name="activatable">True</property>
                                 <property name="title" translatable="yes">Alarm Sound</property>
+                                <property name="visible">False</property>
                                 <property name="action-name">navigation.push</property>
                                 <property name="action-target">'sound-chooser'</property>
                                 <child>
