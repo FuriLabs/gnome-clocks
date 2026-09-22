@@ -5,7 +5,7 @@ Uploaders: Jeremy Bícha <jbicha@ubuntu.com>,
            Laurent Bigonville <bigon@debian.org>,
            Marco Trevisan (Treviño) <marco@ubuntu.com>
 Section: gnome
-Build-Depends: debhelper-compat (= 13),
+Build-Depends: debhelper-compat (= 14),
                dh-sequence-gnome,
                appstream <!nocheck>,
                desktop-file-utils,
@@ -29,7 +29,7 @@ Homepage: https://apps.gnome.org/Clocks/
 
 Package: gnome-clocks
 Architecture: any
-Depends: geoclue-2.0, ${misc:Depends}, ${shlibs:Depends}
+Depends: geoclue-2.0
 Description: Simple GNOME app with stopwatch, timer, and world clock support
  GNOME Clocks is a simple application to show the time and date in multiple
  locations and set alarms or timers. A stopwatch is also included.

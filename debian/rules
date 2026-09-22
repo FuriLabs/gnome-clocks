@@ -4,7 +4,7 @@ export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 export DEB_LDFLAGS_MAINT_APPEND = -Wl,-O1 -Wl,-z,defs
 
 %:
-	dh $@
+	dh $@ --without single-binary
 
-override_dh_gnome_clean:
-	dh_gnome_clean --no-control
+# We only use dh_gnome to automatically run dh_translations in Ubuntu
+override_dh_gnome:
