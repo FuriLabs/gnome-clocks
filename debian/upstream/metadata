@@ -1,5 +1,6 @@
 ---
-Bug-Database: https://gitlab.gnome.org/GNOME/gnome-clocks/-/issues
-Bug-Submit: https://gitlab.gnome.org/GNOME/gnome-clocks/-/issues/new
+Bug-Database: https://gitlab.gnome.org/GNOME/gnome-clocks/-/work_items
+Bug-Submit: https://gitlab.gnome.org/GNOME/gnome-clocks/-/work_items/new
 Repository: https://gitlab.gnome.org/GNOME/gnome-clocks.git
 Repository-Browse: https://gitlab.gnome.org/GNOME/gnome-clocks
+Security-Contact: https://gitlab.gnome.org/Teams/Releng/security
